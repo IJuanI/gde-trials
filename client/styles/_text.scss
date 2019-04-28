@@ -1,0 +1,19 @@
+@font-face {
+  font-family: League Spartan Bold;
+  src: url(/assets/fonts/leaguespartan-bold.ttf);
+  src:
+  url(/assets/fonts/leaguespartan-bold.ttf) format("truetype"),
+  url(/assets/fonts/leaguespartan-bold.otf) format("opentype");
+}
+
+.league {
+  font-family: 'League Spartan Bold', sans-serif !important;
+}
+
+.text-large {
+  font-size: 32px !important
+}
+
+.text-compact-xs {
+  line-height: 0.3em;
+}

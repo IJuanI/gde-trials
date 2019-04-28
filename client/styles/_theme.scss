@@ -1,0 +1,120 @@
+@import '~@angular/material/theming';
+@import 'palette';
+
+@mixin custom-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-bg-primary {
+    background-color: mat-color($primary, default);
+  }
+  .mat-bg-primary-A400 {
+    background-color: mat-color($primary, 'A400');
+  }
+  .mat-bg-accent {
+    background-color: mat-color($accent, 800);
+  }
+  .mat-bg-background {
+    background-color: mat-color($background, background);
+  }
+  .mat-bg-background-dark-1 {
+    background-color: mat-color($background, app-bar);
+  }
+
+  body { background-color : mat-color($background, disabled-button-toggle); margin: 0 }
+  .mat-drawer-container { background-color : mat-color($background, disabled-button-toggle) }
+
+  *:focus { outline: 0 !important }
+  * { user-select: none !important }
+
+  button {
+    border: none;
+    &:hover { cursor: pointer }
+  }
+
+  .ng-invalid button {
+    color: mat-color($foreground, disabled-button);
+    &:hover { cursor: default }
+  }
+
+  .ng-valid button {
+    color: mat-color($primary, 400);
+    &:hover { color: mat-color($primary, default) }
+  }
+
+  .scrollable-content { display: flex; flex-wrap: wrap }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance:textfield;
+  }
+
+  mat-form-field {
+    min-width: auto;
+    .mat-form-field-infix {
+      width: auto;
+    }
+  }
+
+  a {
+    color: mat-color($foreground, text);
+    &:hover {
+      text-decoration: none;
+      color: mat-color($foreground, text);
+    }
+  }
+
+
+  .mat-toolbar-thin {
+    height: 40px;
+  }
+
+  .mat-tab-group.mat-tab-background-reset .mat-tab-header {
+    background-color: transparent;
+  }
+
+  .mat-tab-group.mat-tab-background-reset .mat-tab-label {
+    color: mat-color($foreground, text);
+  }
+
+  .mat-tab-group.mat-primary.mat-tab-background-reset .mat-ink-bar {
+    background-color: mat-color($primary, default);
+  }
+  .mat-tab-group.mat-accent.mat-tab-background-reset .mat-ink-bar {
+    background-color: mat-color($accent, default);
+  }
+  .mat-tab-group.mat-warn.mat-tab-background-reset .mat-ink-bar {
+    background-color: mat-color($warn, default);
+  }
+
+  .mat-tab-group.mat-tab-tall .mat-tab-body-wrapper {
+    height: 100%;
+  }
+
+  .mat-tab-group.mat-tab-wide .mat-tab-header {
+    position: absolute;
+    width: 100vw;
+    left: -25vw;
+    z-index: 2;
+  }
+
+  .mat-tab-group.mat-tab-no-wide .mat-tab-header {
+    position: relative;
+    width: auto;
+    left: 0;
+    z-index: 1;
+  }
+
+  .mat-tab-group.mat-ink-bar-thick .mat-ink-bar {
+    height: 5px;
+    border-radius: 2px;
+  }
+}

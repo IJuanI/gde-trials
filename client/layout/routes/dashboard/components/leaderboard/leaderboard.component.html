@@ -1,0 +1,24 @@
+<div class="mat-bg-background mat-elevation-z3 mb-1 pb-1">
+  <mat-toolbar color="accent" class="mat-toolbar-thin">
+    <span class="col p-0 text-center">
+      {{name}}
+    </span>
+  </mat-toolbar>
+
+  <div class="d-flex flex-column" style="min-height:440px">
+    <mat-progress-bar mode="indeterminate" *ngIf="loading; else checkEmpty"></mat-progress-bar>
+
+    <item *ngFor="let entry of ranks.slice(0, 1); let i = index" [pos]="i + 1" [name]="entry.name" [score]="entry.score" color="mat-bg-accent"></item>
+    <item *ngFor="let entry of ranks.slice(1, 3); let i = index" [pos]="i + 2" [name]="entry.name" [score]="entry.score"></item>
+    <mat-divider *ngIf="ranks.length > 3"></mat-divider>
+    <item *ngFor="let entry of ranks.slice(3); let i = index" [pos]="i + 4" [name]="entry.name" [score]="entry.score" color="mat-bg-primary-A400"></item>
+
+    <ng-template #checkEmpty>
+      <div class="text-center my-auto pb-5" *ngIf="ranks.length === 0">
+        <h3>Nada por acá</h3>
+        <br>
+        <h4>Podés ser el primero!</h4>
+      </div>
+    </ng-template>
+  </div>
+</div>

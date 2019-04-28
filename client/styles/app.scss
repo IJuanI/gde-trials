@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+@import 'palette';
+@import 'theme';
+@import 'text';
+
+$primary: mat-palette($my-primary);
+$accent:  mat-palette($my-accent, 400, 200, 600);
+$warn: mat-palette($my-warn);
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include mat-core();
+
+@include angular-material-theme($theme);
+@include custom-theme($theme);
+

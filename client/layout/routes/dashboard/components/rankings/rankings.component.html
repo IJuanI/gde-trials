@@ -1,0 +1,5 @@
+<div #wrapper class="d-flex overflow-hidden flex-lg-row flex-column">
+  <div class="pt-0 col-12 col-lg-6 px-0 d-flex" *ngFor="let board of boards; let i = index">
+    <leaderboard class="col pl-0" [ngClass]="{'pl-3': i>0}" [name]="board.name" [category]="board.category"></leaderboard>
+  </div>
+</div>

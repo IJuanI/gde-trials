@@ -1,0 +1,18 @@
+<div class="row m-0 h-100">
+  <div class="col-2 my-2 p-0">
+    <span
+      class="text-center rounded-circle d-block mx-auto p-1"
+      style="width:28px; height:28px; line-height:20px"
+      [ngClass]="color"
+    >
+      {{ pos }}
+    </span>
+  </div>
+  <button mat-button class="col-10 h-100 rounded-0 text-left">
+    <div class="d-flex col row pr-0">
+      {{ name }}
+      <span class="col"></span>
+      {{ score }}
+    </div>
+  </button>
+</div>
