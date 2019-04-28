@@ -4,8 +4,7 @@
   "main": "dist/index.js",
   "scripts": {
     "ng": "ng",
-    "heroku-prebuild": "tsc -p server",
-    "heroku-postbuild": "ng build --prod --aot",
+    "heroku-postbuild": "tsc -p server; ng build --prod --aot",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
